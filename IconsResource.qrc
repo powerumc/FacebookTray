@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>facebook.jpg</file>
+    </qresource>
+</RCC>
