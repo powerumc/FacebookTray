@@ -4,7 +4,7 @@
 #define HOST_FACEBOOK "facebook.com"
 #define LINK_ADDR_FACEBOOK "facebook.com/l.php"
 #define MOVIE_ADDR_FACEBOOK "facebook.com/story.php"
-#define URL_FACEBOOK "https://m.facebook.com"
+#define URL_FACEBOOK "https://messenger.coupang.net"
 
 class common
 {

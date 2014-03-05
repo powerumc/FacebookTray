@@ -89,10 +89,10 @@ void MainWindow::onLoad()
     trayMenu->addAction(action_quit);
 
 
-    tray = new HostSystemCounterTrayIcon(this, new QImage(":/icons/facebook.jpg"));
+    tray = new HostSystemCounterTrayIcon(this, new QImage(":/icons/coupang.jpeg"));
     tray->setContextMenu(trayMenu);
 
-    tray->setIcon(QIcon(":/icons/facebook.jpg"));
+    tray->setIcon(QIcon(":/icons/coupang.jpeg"));
     tray->show();
 
 

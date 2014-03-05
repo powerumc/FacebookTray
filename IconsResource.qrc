@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/icons">
         <file>facebook.jpg</file>
+        <file>coupang.jpeg</file>
     </qresource>
 </RCC>

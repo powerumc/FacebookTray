@@ -37,6 +37,7 @@ RESOURCES += \
 
 
 macx {
+    CONFIG -= app_bundle
     QMAKE_CXXFLAGS_RELEASE += -fvisibility=hidden
     QMAKE_CXXFLAGS_DEBUG += -fvisibility=hidden
 #    QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.3
