@@ -48,7 +48,8 @@ void MainWindow::onLoad()
     ui->webView->settings()->globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, true);
     ui->webView->settings()->globalSettings()->setAttribute(QWebSettings::JavascriptCanAccessClipboard, true);
     ui->webView->settings()->globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
-
+    ui->webView->settings()->globalSettings()->setAttribute(QWebSettings::JavascriptCanCloseWindows, true);
+    ui->webView->settings()->globalSettings()->setAttribute(QWebSettings::CaretBrowsingEnabled, true);
 
 
 
@@ -129,6 +130,12 @@ void MainWindow::onLoad()
 
     // Qt QWebView는 target="_blank"인 링크는 클릭 시그널을 인식하지 못하고, 링크도 열리지 않는다.
     // <a class="darkTouch" href="http://m.facebook.com/l.php?u=http%3A%2F%2Fcandycrush.king.com%2FFacebookServlet%2Fopengraph%2Fcandycrush%3Alife%3F_pu%3D1469648980%26_tt%3DFB%26fb_action_ids%3D502680923127061%26fb_action_types%3Dcandycrush%253Agive%26fb_source%3Dother_multiline%26action_object_map%3D%255B218437438299003%255D%26action_type_map%3D%255B%2522candycrush%253Agive%2522%255D%26action_ref_map%3D%255B%255D&amp;h=7AQFAAsq3&amp;enc=AZOclnp2wWdpTcAexgWnvaAx2ZaAQNmQOXn_n-Z17oI4rWVKdIWrsnKxs1WOuC7D-hj7NvcVZBHL2_hboG0emjg81wiJrEDNdqpQVVQ8QIlYOLm04XfOI5sIj8d1ynytGReD6uW2_hbHYjN4BR5GKtSz&amp;s=1" target="_blank" onclick="JX.RenderLinkshim.click(this, &quot;http:\/\/candycrush.king.com\/FacebookServlet\/opengraph\/candycrush:life?_pu=1469648980&amp;_tt=FB&amp;fb_action_ids=502680923127061&amp;fb_action_types=candycrush\u00253Agive&amp;fb_source=other_multiline&amp;action_object_map=\u00255B218437438299003\u00255D&amp;action_type_map=\u00255B\u002522candycrush\u00253Agive\u002522\u00255D&amp;action_ref_map=\u00255B\u00255D&quot;, &quot;https:\/\/www.facebook.com\/si\/ajax\/l\/render_linkshim_log\/?u=http\u00253A\u00252F\u00252Fcandycrush.king.com\u00252FFacebookServlet\u00252Fopengraph\u00252Fcandycrush\u00253Alife\u00253F_pu\u00253D1469648980\u002526_tt\u00253DFB\u002526fb_action_ids\u00253D502680923127061\u002526fb_action_types\u00253Dcandycrush\u0025253Agive\u002526fb_source\u00253Dother_multiline\u002526action_object_map\u00253D\u0025255B218437438299003\u0025255D\u002526action_type_map\u00253D\u0025255B\u00252522candycrush\u0025253Agive\u00252522\u0025255D\u002526action_ref_map\u00253D\u0025255B\u0025255D&amp;h=7AQFAAsq3&amp;enc=AZOclnp2wWdpTcAexgWnvaAx2ZaAQNmQOXn_n-Z17oI4rWVKdIWrsnKxs1WOuC7D-hj7NvcVZBHL2_hboG0emjg81wiJrEDNdqpQVVQ8QIlYOLm04XfOI5sIj8d1ynytGReD6uW2_hbHYjN4BR5GKtSz&amp;s=1&amp;__user=100000339676463&amp;__a=1&quot;);"><div data-sigil="touchable touchable"><div class="storyAttachmentMedia"><i class="img img" style="background-image: url(&quot;https://fbexternal-a.akamaihd.net/safe_image.php?d=AQDF7cq-qhXxqVn-&amp;w=60&amp;h=60&amp;url=http%3A%2F%2Fcc1.midasplayer.com%2Fimages%2Fopengraph%2F90x90_life.png%3F_v%3D1ozkgyy&amp;crop&quot;);background-repeat:no-repeat;background-size:100% 100%;-webkit-background-size:100% 100%;width:60px;height:60px;" aria-label="공개되는 모습" role="img"></i></div><div class="storyAttachmentTitle">Life<div class="storyAttachmentCaption"><span><span>Candy Crush Saga</span></span></div></div><div class="clear"></div></div></a>
+
+
+
+
+    QWidget *widget = new QWidget(this);
+    widget->show();
 }
 
 void MainWindow::onQuit()

@@ -6,6 +6,7 @@ HostWebPage::HostWebPage(QObject *parent, QUrl baseUrl) : QWebPage(parent), _bas
     connect(this, SIGNAL(linkHovered(QString,QString,QString)), SLOT(onLinkHovered(QString,QString,QString)));
     connect(this, SIGNAL(linkClicked(const QUrl&)), this, SLOT(onLinkClicked(const QUrl&)));
     connect(this, SIGNAL(loadFinished(bool)), this, SLOT(onLoadFinished(bool)));
+    connect(this, SIGNAL(), SLOT());
 
     onTimer();
 }
@@ -49,6 +50,8 @@ void HostWebPage::onLinkClicked(const QUrl &url)
 {
     qDebug() << "FacebookWebPage::onLinkClicked url=" << url.url();
 
+
+
 }
 
 void HostWebPage::onLoadFinished(bool ok)
@@ -78,6 +81,17 @@ QWebPage *HostWebPage::createWindow(WebWindowType type)
     qDebug() << "QWebPage::createWindow type=" << type << " " << this->view();
     qDebug() << "LastUrl=" << lastUrl;
 
+    QWebView *webview = new QWebView();
+    QWebPage *page    = new QWebPage(webview);
+
+    webview->setPage(page);
+    webview->show();
+
+    return page;
+
+    //return QWebPage::createWindow(type);
+
+    /*
     if(_baseUrl.url().isEmpty() == false)
     {
         if(lastUrl.toLower().contains(_baseUrl.host()) == false ||
@@ -91,6 +105,7 @@ QWebPage *HostWebPage::createWindow(WebWindowType type)
     ((QWebView*)this->view())->load(QUrl(this->lastUrl));
 
     return new HostWebPage(this->view());
+    */
 }
 
 static int staticCount = 0;

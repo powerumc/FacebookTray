@@ -3,6 +3,7 @@
 
 #include "common.h"
 
+#include <QtCore>
 #include <QUrl>
 #include <QWebView>
 #include <QWebPage>
