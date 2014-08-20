@@ -43,3 +43,9 @@ macx {
 #    QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.6.sdk
 }
 
+win32 {
+    QMAKE_LIBS_QT
+    LIBS += -Xlinker -Bstatic
+    LIBS += -lQt5WebKitWidgets -lQt5WebKit
+    QMAKE_LIBS_QT = qt5webkitwidgets.lib
+}
